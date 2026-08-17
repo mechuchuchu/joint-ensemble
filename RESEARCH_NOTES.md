@@ -152,7 +152,7 @@ into low-correlation member functions under the joint objective.
 ## Reproducibility and limitations
 
 - Source code uses public Hugging Face CIFAR-100 and MNIST datasets where applicable.
-- Generated datasets, result directories, and smoke-test outputs are ignored by Git.
+- Generated datasets, and smoke-test outputs are ignored by Git.
 - The CIFAR and MNIST runs are pilots, not multi-seed statistical studies.
 - The L-BFGS random-vector result currently has one trial and should be repeated over
   multiple seeds before making a variance-sensitive claim.
