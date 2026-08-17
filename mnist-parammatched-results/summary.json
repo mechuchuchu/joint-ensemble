@@ -1,0 +1,40 @@
+{
+  "args": {
+    "members": [
+      69
+    ],
+    "epochs": 30,
+    "batch_size": 512,
+    "workers": 6,
+    "seed": 20260818,
+    "data": "data",
+    "output": "mnist-parammatched-results",
+    "no_compile": false
+  },
+  "records": [
+    {
+      "mode": "independent",
+      "members": 69,
+      "accuracy": 81.48999810218811,
+      "nll": 0.6941038966178894,
+      "member_accuracy_mean": 61.22608947753906,
+      "member_accuracy_min": 11.350000381469727,
+      "member_accuracy_max": 71.91999816894531,
+      "mean_logit_correlation": 0.4789203355153439,
+      "leave_one_out_accuracy_mean": 81.5233329931895,
+      "leave_one_out_accuracy_min": 81.3700020313263
+    },
+    {
+      "mode": "joint_sum",
+      "members": 69,
+      "accuracy": 96.95000052452087,
+      "nll": 0.2916734516620636,
+      "member_accuracy_mean": 12.543913841247559,
+      "member_accuracy_min": 7.659999847412109,
+      "member_accuracy_max": 24.299999237060547,
+      "mean_logit_correlation": 0.048183203342433895,
+      "leave_one_out_accuracy_mean": 96.69492771660072,
+      "leave_one_out_accuracy_min": 95.21999955177307
+    }
+  ]
+}

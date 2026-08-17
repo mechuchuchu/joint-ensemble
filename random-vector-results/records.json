@@ -1,0 +1,450 @@
+{
+  "args": {
+    "vectors": [
+      128,
+      512,
+      2048,
+      8192
+    ],
+    "trials": 3,
+    "epochs": 100,
+    "min_steps": 500,
+    "batch_size": 256,
+    "seed": 20260820,
+    "output": "random-vector-results"
+  },
+  "records": [
+    {
+      "vectors": 128,
+      "trial": 0,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00019102482474409044,
+      "parameters": 1482
+    },
+    {
+      "vectors": 128,
+      "trial": 0,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 1.3395781934377737e-05,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 0,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 4.610025825968478e-06,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 0,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 3.0733540370420087e-06,
+      "parameters": 11791
+    },
+    {
+      "vectors": 128,
+      "trial": 1,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00019356350821908563,
+      "parameters": 1482
+    },
+    {
+      "vectors": 128,
+      "trial": 1,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 7.254896900121821e-06,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 1,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 3.794194071815582e-06,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 1,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 3.389070798220928e-06,
+      "parameters": 11791
+    },
+    {
+      "vectors": 128,
+      "trial": 2,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00020837961346842349,
+      "parameters": 1482
+    },
+    {
+      "vectors": 128,
+      "trial": 2,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 9.09475602384191e-06,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 2,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 4.47777802037308e-06,
+      "parameters": 11856
+    },
+    {
+      "vectors": 128,
+      "trial": 2,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 3.574401944206329e-06,
+      "parameters": 11791
+    },
+    {
+      "vectors": 512,
+      "trial": 0,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.006308449432253838,
+      "parameters": 1482
+    },
+    {
+      "vectors": 512,
+      "trial": 0,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0001235909148817882,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 0,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00011686706420732662,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 0,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00013005646178498864,
+      "parameters": 11791
+    },
+    {
+      "vectors": 512,
+      "trial": 1,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.006061739753931761,
+      "parameters": 1482
+    },
+    {
+      "vectors": 512,
+      "trial": 1,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0001026006939355284,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 1,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00013339213910512626,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 1,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00012614642037078738,
+      "parameters": 11791
+    },
+    {
+      "vectors": 512,
+      "trial": 2,
+      "steps": 500,
+      "mode": "single",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0058959051966667175,
+      "parameters": 1482
+    },
+    {
+      "vectors": 512,
+      "trial": 2,
+      "steps": 500,
+      "mode": "bagging",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0001837426534621045,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 2,
+      "steps": 500,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00013474360457621515,
+      "parameters": 11856
+    },
+    {
+      "vectors": 512,
+      "trial": 2,
+      "steps": 500,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.00013998118811286986,
+      "parameters": 11791
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 800,
+      "mode": "single",
+      "train_accuracy": 51.46484375,
+      "train_nll": 1.3910194635391235,
+      "parameters": 1482
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 800,
+      "mode": "bagging",
+      "train_accuracy": 93.45703125,
+      "train_nll": 0.6558091640472412,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 800,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0008816550252959132,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 800,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0009581155027262866,
+      "parameters": 11791
+    },
+    {
+      "vectors": 2048,
+      "trial": 1,
+      "steps": 800,
+      "mode": "single",
+      "train_accuracy": 51.3671875,
+      "train_nll": 1.3562451601028442,
+      "parameters": 1482
+    },
+    {
+      "vectors": 2048,
+      "trial": 1,
+      "steps": 800,
+      "mode": "bagging",
+      "train_accuracy": 94.677734375,
+      "train_nll": 0.6868920922279358,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 1,
+      "steps": 800,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0007791941752657294,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 1,
+      "steps": 800,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.0009662267402745783,
+      "parameters": 11791
+    },
+    {
+      "vectors": 2048,
+      "trial": 2,
+      "steps": 800,
+      "mode": "single",
+      "train_accuracy": 50.927734375,
+      "train_nll": 1.4131412506103516,
+      "parameters": 1482
+    },
+    {
+      "vectors": 2048,
+      "trial": 2,
+      "steps": 800,
+      "mode": "bagging",
+      "train_accuracy": 94.23828125,
+      "train_nll": 0.6792365312576294,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 2,
+      "steps": 800,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 0.000868756789714098,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 2,
+      "steps": 800,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 0.000904638203792274,
+      "parameters": 11791
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 3200,
+      "mode": "single",
+      "train_accuracy": 21.66748046875,
+      "train_nll": 2.062614679336548,
+      "parameters": 1482
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 3200,
+      "mode": "bagging",
+      "train_accuracy": 60.97412109375,
+      "train_nll": 1.759678840637207,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 3200,
+      "mode": "joint",
+      "train_accuracy": 84.6435546875,
+      "train_nll": 0.4490799307823181,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 3200,
+      "mode": "dense",
+      "train_accuracy": 80.72509765625,
+      "train_nll": 0.5581260919570923,
+      "parameters": 11791
+    },
+    {
+      "vectors": 8192,
+      "trial": 1,
+      "steps": 3200,
+      "mode": "single",
+      "train_accuracy": 24.23095703125,
+      "train_nll": 2.0562291145324707,
+      "parameters": 1482
+    },
+    {
+      "vectors": 8192,
+      "trial": 1,
+      "steps": 3200,
+      "mode": "bagging",
+      "train_accuracy": 59.33837890625,
+      "train_nll": 1.773805022239685,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 1,
+      "steps": 3200,
+      "mode": "joint",
+      "train_accuracy": 83.55712890625,
+      "train_nll": 0.4925197958946228,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 1,
+      "steps": 3200,
+      "mode": "dense",
+      "train_accuracy": 77.2705078125,
+      "train_nll": 0.6313012838363647,
+      "parameters": 11791
+    },
+    {
+      "vectors": 8192,
+      "trial": 2,
+      "steps": 3200,
+      "mode": "single",
+      "train_accuracy": 23.93798828125,
+      "train_nll": 2.0587921142578125,
+      "parameters": 1482
+    },
+    {
+      "vectors": 8192,
+      "trial": 2,
+      "steps": 3200,
+      "mode": "bagging",
+      "train_accuracy": 60.02197265625,
+      "train_nll": 1.7648594379425049,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 2,
+      "steps": 3200,
+      "mode": "joint",
+      "train_accuracy": 83.3251953125,
+      "train_nll": 0.49893081188201904,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 2,
+      "steps": 3200,
+      "mode": "dense",
+      "train_accuracy": 79.0771484375,
+      "train_nll": 0.6090505123138428,
+      "parameters": 11791
+    }
+  ]
+}

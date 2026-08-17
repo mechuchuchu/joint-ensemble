@@ -1,0 +1,91 @@
+{
+  "args": {
+    "vectors": [
+      2048,
+      8192
+    ],
+    "trials": 1,
+    "epochs": 100,
+    "min_steps": 500,
+    "batch_size": 256,
+    "optimizer": "lbfgs",
+    "lbfgs_steps": 30,
+    "lbfgs_max_iter": 10,
+    "seed": 20260820,
+    "output": "random-vector-lbfgs-results"
+  },
+  "records": [
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 30,
+      "mode": "single",
+      "train_accuracy": 52.880859375,
+      "train_nll": 1.2369558811187744,
+      "parameters": 1482
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 30,
+      "mode": "bagging",
+      "train_accuracy": 98.486328125,
+      "train_nll": 0.3210415542125702,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 30,
+      "mode": "joint",
+      "train_accuracy": 100.0,
+      "train_nll": 7.473862240203744e-08,
+      "parameters": 11856
+    },
+    {
+      "vectors": 2048,
+      "trial": 0,
+      "steps": 30,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 9.173525938876992e-08,
+      "parameters": 11791
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 30,
+      "mode": "single",
+      "train_accuracy": 24.51171875,
+      "train_nll": 2.0629165172576904,
+      "parameters": 1482
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 30,
+      "mode": "bagging",
+      "train_accuracy": 54.96826171875,
+      "train_nll": 1.8691197633743286,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 30,
+      "mode": "joint",
+      "train_accuracy": 86.9873046875,
+      "train_nll": 0.49504759907722473,
+      "parameters": 11856
+    },
+    {
+      "vectors": 8192,
+      "trial": 0,
+      "steps": 30,
+      "mode": "dense",
+      "train_accuracy": 100.0,
+      "train_nll": 4.65515697101182e-08,
+      "parameters": 11791
+    }
+  ]
+}
