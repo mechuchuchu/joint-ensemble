@@ -1,0 +1,13 @@
+# Normalize all repository text files to LF on checkout and commit.
+* text=auto eol=lf
+
+# Keep common generated/model artefacts binary if they are ever committed deliberately.
+*.pt binary
+*.pth binary
+*.ckpt binary
+*.npy binary
+*.npz binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
