@@ -158,3 +158,42 @@ into low-correlation member functions under the joint objective.
   multiple seeds before making a variance-sensitive claim.
 - Random-label memorization measures optimization and capacity, not useful-data
   generalization or distributed communication efficiency.
+
+## CIFAR-100 ResNet-18: logit-sum versus hidden-sum
+
+Setup: four independently parameterized CIFAR-style ResNet-18 members with
+width multiplier 16, trained jointly with one cross-entropy loss. The member
+axis was folded into the channel axis and processed with grouped convolutions
+so that the four members could be evaluated in a single vectorized model.
+Training used the Hugging Face `uoft-cs/cifar100` dataset, the same fixed
+45k/5k train/validation split convention, standard CIFAR augmentation, SGD
+with momentum, cosine learning-rate decay, and 20 epochs.
+
+The experiment compared two aggregation locations:
+
+1. `logit_sum`: each member has its own classifier and the four logits are
+   summed, `sum_i W_i h_i`.
+2. `hidden_sum`: the four penultimate hidden vectors are summed first and a
+   single shared classifier produces the logits, `W sum_i h_i`.
+
+The hidden-sum condition therefore introduces communication before the final
+classifier and has one shared head, while logit-sum preserves independent
+member heads. This creates a small parameter-count difference that is recorded
+below; the comparison is not parameter-exact.
+
+| Condition | Parameters | Test accuracy | Raw NLL | Calibrated NLL | Temperature |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Logit sum | 2,852,304 | **65.33%** | **1.2254** | **1.2095** | 1.171 |
+| Hidden sum | 2,813,604 | 63.27% | 1.3072 | 1.2924 | 1.164 |
+
+Under this single 20-epoch run, logit aggregation exceeded hidden aggregation
+by 2.06 percentage points. Hidden-sum learned successfully but started more
+slowly under the same optimization schedule, consistent with the shared head
+having to decode a summed representation rather than receiving member-specific
+class logits. This is a pilot result from one seed, not a statistical claim.
+
+The implementation and outputs are in `resnet18_hidden_vs_logit_sum.py` and
+`resnet18-hidden-results/`. The grouped-convolution implementation was used
+for throughput and vectorization; the result should therefore be followed up
+with multiple seeds and a parameter-matched hidden aggregation control before
+drawing architectural conclusions.
