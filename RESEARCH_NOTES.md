@@ -197,3 +197,71 @@ The implementation and outputs are in `resnet18_hidden_vs_logit_sum.py` and
 for throughput and vectorization; the result should therefore be followed up
 with multiple seeds and a parameter-matched hidden aggregation control before
 drawing architectural conclusions.
+
+## MNIST 2D bottleneck with extreme dropout
+
+To test the effect of sharply reducing the effective capacity of each additive
+correction model, the same `784 -> 128 -> 64 -> 32 -> 2 -> 10` bottleneck was
+augmented with dropout probability `p=0.7` after every hidden activation. Each
+correction stage still added logits on top of frozen previous stages. There
+were eight stages, 30 epochs per stage, and three trials. Each stage contained
+110,912 parameters, for 887,296 cumulative parameters after stage 8.
+
+### Dropout active during both training and inference
+
+With dropout masks active at inference and three stochastic evaluation passes
+averaged for each metric, the mean test accuracy evolved as follows:
+
+| Stage | Test accuracy | Test NLL |
+| ---: | ---: | ---: |
+| 1 | 30.77% | 1.9144 |
+| 2 | 50.79% | 1.5609 |
+| 3 | 60.54% | 1.2779 |
+| 4 | 66.20% | 1.1350 |
+| 5 | 74.73% | 0.9406 |
+| 6 | 79.57% | 0.8170 |
+| 7 | 82.89% | 0.7118 |
+| 8 | **84.79%** | **0.6576** |
+
+The always-on stochastic network remained substantially below the no-dropout
+eight-stage result of approximately 97.50%, but additive correction still
+recovered more than 54 percentage points from stage 1 to stage 8.
+
+### Inference dropout disabled: frozen-baseline extraction ablation
+
+The next ablation kept `p=0.7` active while training the new correction, but
+disabled dropout for all test inference. It varied only whether frozen previous
+models used dropout when producing the baseline logits during training:
+
+- `baseline_dropout_off`: previous-stage logits were deterministic.
+- `baseline_dropout_on`: previous-stage logits were sampled with dropout.
+
+Evaluation was deterministic in both conditions. Mean test accuracy across
+three trials was:
+
+| Stage | Baseline dropout off | Baseline dropout on |
+| ---: | ---: | ---: |
+| 1 | 44.71% | 44.71% |
+| 2 | 58.98% | **67.64%** |
+| 3 | 79.61% | **80.12%** |
+| 4 | 85.50% | **85.68%** |
+| 5 | **89.91%** | 89.81% |
+| 6 | 90.78% | **91.12%** |
+| 7 | **91.94%** | 91.56% |
+| 8 | **92.30%** | 92.05% |
+
+The final accuracy difference was small, but deterministic frozen baselines
+produced a slightly better final result and substantially better final NLL
+(0.3688 versus 0.5099). The first stage is identical by construction because
+there is no previous model; the conditions diverge from stage 2 onward. The
+dropout-on baseline was often stronger in the early stages, while the
+dropout-off baseline was more stable late in training.
+
+These are capacity and optimization probes on MNIST, not claims about useful
+data generalization. In particular, always-on dropout changes the deployed
+predictor into a stochastic function, while the inference-off ablation measures
+the effect of noise only during training and residual-baseline construction.
+Artifacts are stored in `additive-mnist-bottleneck-results/`,
+`additive-mnist-bottleneck-dropout07-results/`,
+`additive-mnist-bottleneck-dropout07-baseline-off-results/`, and
+`additive-mnist-bottleneck-dropout07-baseline-on-results/`.
