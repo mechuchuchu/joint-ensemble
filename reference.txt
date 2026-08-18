@@ -1,1 +1,3 @@
-
+https://huggingface.co/datasets/uoft-cs/cifar100
+https://huggingface.co/datasets/ylecun/mnist
+https://www.awebb.info/misc/joint-training.pdf
